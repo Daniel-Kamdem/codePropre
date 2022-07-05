@@ -1,12 +1,15 @@
 package ex1;
 
 public class calcul {
-
-	public int get1(int a, int b){
+ 
+	// bloucle qui permet d'additionnée a et b 
+	
+	 int get1(int a, int b){
 		return a+b;
 	}
 	
-	public int get2(int a, int b){
+	 // boucle qui permet de calculer la difference entre a et b 
+     int get2(int a, int b){
 		return a-b;
 	}
 }

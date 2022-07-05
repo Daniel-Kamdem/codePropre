@@ -17,6 +17,8 @@ public class CompteBancaire {
 	/** Le type vaut soit CC=Compte courant, ou soit LA=Livret A */
 	private String type;
 	
+	/** Ce constructeur est utilisé pour créer un compte courant
+	
 	/**
 	 * @param solde
 	 * @param decouvert
@@ -32,9 +34,7 @@ public class CompteBancaire {
 	/** Ajoute un montant au solde
 	 * @param montant
 	 */
-	public void ajouterMontant(double montant){
-		this.solde += montant;
-	}
+	
 	
 	/** Ajoute un montant au solde
 	 * @param montant
@@ -49,9 +49,14 @@ public class CompteBancaire {
 			if (this.solde - montant > 0){
 				this.solde = solde - montant;
 			}	
+			
+			
+			
 		}
+		
 	}
 	
+	// Appliquer Remu Annuelle 
 	public void appliquerRemuAnnuelle(){
 		if (type.equals("LA")){
 			this.solde = solde + solde*tauxRemuneration/100;
@@ -64,12 +69,17 @@ public class CompteBancaire {
 	 * @param decouvert  représente le découvert autorisé
 	 * @param tauxRemuneration  représente le taux de rémunération du livret A
 	 */
+	
+	// Appliquez le taux de remunération 
+	
 	public CompteBancaire(String type, double solde, double decouvert, double tauxRemuneration) {
 		super();
 		this.type = type;
 		this.solde = solde;
 		this.decouvert = decouvert;
 		this.tauxRemuneration = tauxRemuneration;
+		
+		//public void appliquerRemuAnnuelle() {
 	}
 	
 	/** Getter for solde
@@ -82,6 +92,8 @@ public class CompteBancaire {
 	/** Setter
 	 * @param solde the solde to set
 	 */
+	
+	
 	public void setSolde(double solde) {
 		this.solde = solde;
 	}
@@ -91,17 +103,17 @@ public class CompteBancaire {
 	public double getDecouvert() {
 		return decouvert;
 	}
-	/** Setter
+	/** Setter for decouvert
 	 * @param decouvert the decouvert to set
 	 */
 	public void setDecouvert(double decouvert) {
 		this.decouvert = decouvert;
-	}
+	 }
 	/** Getter for tauxRemuneration
 	 * @return the tauxRemuneration
 	 */
 	public double getTauxRemuneration() {
-		return tauxRemuneration;
+		return 0;
 	}
 	/** Setter
 	 * @param tauxRemuneration the tauxRemuneration to set
